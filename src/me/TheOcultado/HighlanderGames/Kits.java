@@ -124,7 +124,7 @@ public class Kits {
 			p.getInventory().setBoots(IronBoots);
 			
 			ItemStack IronSword = new ItemStack(Material.IRON_SWORD);
-			IronSword.addEnchantment(Enchantment.DAMAGE_ALL, 2);
+			IronSword.addEnchantment(Enchantment.DAMAGE_ALL, 1);
 		} else if(kit.equalsIgnoreCase("Chemist")){
 			
 			ItemStack Potion1 = new ItemStack(Material.POTION, 15);
