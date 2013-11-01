@@ -24,6 +24,7 @@ public class Kits {
 		clearInventory(p);
 		if (kit.equalsIgnoreCase("")) {
 
+			}else if(kit .equalsIgnoreCase("")){
 		}
 	}
 }
