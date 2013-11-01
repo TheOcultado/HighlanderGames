@@ -10,6 +10,7 @@ import org.bukkit.potion.PotionEffect;
 public class Kits {
 
 	MessageManager mm = MessageManager.getInstance();
+	PlayerDataManager data = PlayerDataManager.getInstance();
 
 	@SuppressWarnings("deprecation")
 	public void clearInventory(Player p) {
@@ -23,6 +24,9 @@ public class Kits {
 	}
 
 	public void selectKit(Player p, String kit) {
+		
+		data.addPlayer(p, kit);
+		
 		Inventory inv = p.getInventory();
 		clearInventory(p);
 		if (kit.equalsIgnoreCase("Archer")) {
