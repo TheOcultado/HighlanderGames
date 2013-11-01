@@ -6,6 +6,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.potion.PotionEffect;
+import org.bukkit.potion.PotionEffectType;
 
 public class Kits {
 
@@ -49,7 +50,11 @@ public class Kits {
 
 			ItemStack LeatherBoots = new ItemStack(Material.LEATHER_BOOTS);
 			LeatherBoots.addEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 3);
+			LeatherBoots.addEnchantment(Enchantment.PROTECTION_FALL, 3);
 			p.getInventory().setBoots(LeatherBoots);
+			
+			p.addPotionEffect(new PotionEffect(PotionEffectType.SPEED,Integer.MAX_VALUE, 1));
+			p.addPotionEffect(new PotionEffect(PotionEffectType.JUMP,Integer.MAX_VALUE, 1));
 
 			ItemStack Arrows = new ItemStack(Material.ARROW, 16);
 			inv.addItem(bow);
@@ -77,6 +82,24 @@ public class Kits {
 
 			inv.addItem(tnt);
 
+		} else if (kit.equalsIgnoreCase("Tank")) {
+			
+			ItemStack DiamondHelmet = new ItemStack(Material.DIAMOND_HELMET);
+			p.getInventory().setHelmet(DiamondHelmet);
+			
+			ItemStack DiamondChest = new ItemStack(Material.DIAMOND_CHESTPLATE);
+			p.getInventory().setHelmet(DiamondChest);
+			
+			ItemStack DiamondLegs = new ItemStack(Material.DIAMOND_LEGGINGS);
+			p.getInventory().setLeggings(DiamondLegs);
+			
+			ItemStack DiamondBoots = new ItemStack(Material.DIAMOND_BOOTS);
+			p.getInventory().setBoots(DiamondBoots);
+			
+			ItemStack StoneSword = new ItemStack(Material.STONE_SWORD);
+			StoneSword.addEnchantment(Enchantment.DAMAGE_ALL, 2);
+			inv.addItem(StoneSword);
+			
 		}
 	}
 }
