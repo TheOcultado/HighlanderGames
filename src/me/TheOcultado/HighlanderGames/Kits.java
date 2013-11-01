@@ -100,6 +100,27 @@ public class Kits {
 			StoneSword.addEnchantment(Enchantment.DAMAGE_ALL, 2);
 			inv.addItem(StoneSword);
 			
+		} else if(kit.equalsIgnoreCase("Knight")) {
+			
+			ItemStack IronHelmet = new ItemStack(Material.IRON_HELMET);
+			IronHelmet.addEnchantment(Enchantment.PROTECTION_PROJECTILE, 1);
+			p.getInventory().setHelmet(IronHelmet);
+			
+			ItemStack IronChest = new ItemStack(Material.IRON_CHESTPLATE);
+			IronChest.addEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 1);
+			IronChest.addEnchantment(Enchantment.PROTECTION_EXPLOSIONS, 1);
+			p.getInventory().setChestplate(IronChest);
+			
+			ItemStack IronLegs = new ItemStack(Material.IRON_LEGGINGS);
+			IronLegs.addEnchantment(Enchantment.PROTECTION_FIRE, 1);
+			p.getInventory().setLeggings(IronLegs);
+			
+			ItemStack IronBoots = new ItemStack(Material.IRON_BOOTS);
+			IronBoots.addEnchantment(Enchantment.PROTECTION_FALL, 1);
+			p.getInventory().setBoots(IronBoots);
+			
+			ItemStack IronSword = new ItemStack(Material.IRON_SWORD);
+			IronSword.addEnchantment(Enchantment.DAMAGE_ALL, 2);
 		}
 	}
 }
