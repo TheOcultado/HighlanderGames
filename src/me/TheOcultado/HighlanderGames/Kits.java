@@ -7,23 +7,23 @@ import org.bukkit.potion.PotionEffect;
 public class Kits {
 
 	MessageManager mm = MessageManager.getInstance();
-	
+
 	@SuppressWarnings("deprecation")
-	public void clearInventory(Player player) {
-		Inventory pi = player.getInventory();
+	public void clearInventory(Player p) {
+		Inventory pi = p.getInventory();
 		pi.clear();
-		player.getInventory().setArmorContents(null);
-		for (PotionEffect effect : player.getActivePotionEffects()) {
-			player.removePotionEffect(effect.getType());
+		p.getInventory().setArmorContents(null);
+		for (PotionEffect effect : p.getActivePotionEffects()) {
+			p.removePotionEffect(effect.getType());
 		}
-		player.updateInventory();
+		p.updateInventory();
 	}
-	
-	public void selectKit(Player player, String kit) {
-		Inventory inv = player.getInventory();
-		clearInventory(player);
-		if (kit .equalsIgnoreCase("")){
-	
-  }
- }
+
+	public void selectKit(Player p, String kit) {
+		Inventory inv = p.getInventory();
+		clearInventory(p);
+		if (kit.equalsIgnoreCase("")) {
+
+		}
+	}
 }
