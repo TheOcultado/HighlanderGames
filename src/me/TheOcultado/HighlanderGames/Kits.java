@@ -1,12 +1,16 @@
 package me.TheOcultado.HighlanderGames;
 
+import org.bukkit.Color;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.LeatherArmorMeta;
+import org.bukkit.potion.Potion;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
+import org.bukkit.potion.PotionType;
 
 public class Kits {
 
@@ -121,6 +125,94 @@ public class Kits {
 			
 			ItemStack IronSword = new ItemStack(Material.IRON_SWORD);
 			IronSword.addEnchantment(Enchantment.DAMAGE_ALL, 2);
+		} else if(kit.equalsIgnoreCase("Chemist")){
+			
+			ItemStack Potion1 = new ItemStack(Material.POTION, 15);
+        	Potion pot = new Potion(1); //The constructor calls for an (int name), but I'm not sure what that is... I tried 1 and it works fine.
+        	pot.setType(PotionType.INSTANT_DAMAGE);
+        	pot.setSplash(true);
+        	pot.apply(Potion1);
+        	p.getInventory().addItem(Potion1);
+        	
+        	ItemStack Potion11 = new ItemStack(Material.POTION, 5);
+        	Potion pot1 = new Potion(1); //The constructor calls for an (int name), but I'm not sure what that is... I tried 1 and it works fine.
+        	pot1.setType(PotionType.POISON);
+        	pot1.setHasExtendedDuration(true);
+        	pot1.setSplash(true);
+        	pot1.apply(Potion11);
+        	p.getInventory().addItem(Potion11);
+        	
+        	ItemStack Potion111 = new ItemStack(Material.POTION, 5);
+        	Potion pot11 = new Potion(1); //The constructor calls for an (int name), but I'm not sure what that is... I tried 1 and it works fine.
+        	pot11.setType(PotionType.INSTANT_HEAL);
+        	pot11.setSplash(true);
+        	pot11.apply(Potion111);
+        	p.getInventory().addItem(Potion111);
+        	
+        	ItemStack Potion1111 = new ItemStack(Material.POTION, 5);
+        	Potion pot111 = new Potion(1); //The constructor calls for an (int name), but I'm not sure what that is... I tried 1 and it works fine.
+        	pot111.setType(PotionType.WEAKNESS);
+        	pot111.setSplash(true);
+        	pot111.apply(Potion1111);
+        	p.getInventory().addItem(Potion1111);
+        	
+        	ItemStack Potion11111 = new ItemStack(Material.POTION, 5);
+        	Potion pot1111 = new Potion(1); //The constructor calls for an (int name), but I'm not sure what that is... I tried 1 and it works fine.
+        	pot1111.setType(PotionType.REGEN);
+        	pot1111.setSplash(true);
+        	pot1111.apply(Potion11111);
+        	p.getInventory().addItem(Potion11111);
+        	
+        	ItemStack Potion111111 = new ItemStack(Material.POTION, 5);
+        	Potion pot11111 = new Potion(1); //The constructor calls for an (int name), but I'm not sure what that is... I tried 1 and it works fine.
+        	pot11111.setType(PotionType.SPEED);
+        	pot11111.setSplash(true);
+        	pot11111.apply(Potion111111);
+        	p.getInventory().addItem(Potion111111);
+        	
+
+        	ItemStack Potion1111111 = new ItemStack(Material.POTION, 5);
+        	Potion pot111111 = new Potion(1); //The constructor calls for an (int name), but I'm not sure what that is... I tried 1 and it works fine.
+        	pot111111.setType(PotionType.SLOWNESS);
+        	pot111111.setSplash(true);
+        	pot111111.apply(Potion1111111);
+        	p.getInventory().addItem(Potion1111111);
+        	
+        	ItemStack LeatherHelmet = new ItemStack(Material.LEATHER_HELMET);
+        	LeatherHelmet.addEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 1);
+        	LeatherArmorMeta metah = (LeatherArmorMeta) LeatherHelmet.getItemMeta();
+        	metah.setColor(Color.RED);
+        	LeatherHelmet.setItemMeta(metah);
+        	
+        	ItemStack LeatherChestplate = new ItemStack(Material.LEATHER_CHESTPLATE);
+            LeatherChestplate.addEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 1);
+            LeatherArmorMeta metac = (LeatherArmorMeta) LeatherChestplate.getItemMeta();
+            metac.setColor(Color.GREEN);
+            LeatherChestplate.setItemMeta(metac);
+            
+        	ItemStack LeatherLeggings = new ItemStack(Material.LEATHER_LEGGINGS);
+        	LeatherLeggings.addEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 1);
+        	LeatherArmorMeta metal = (LeatherArmorMeta) LeatherLeggings.getItemMeta();
+            metal.setColor(Color.FUCHSIA);
+            LeatherLeggings.setItemMeta(metal);
+        	
+        	ItemStack LeatherBoots = new ItemStack(Material.LEATHER_BOOTS);
+        	LeatherBoots.addEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 1);
+        	LeatherArmorMeta metab = (LeatherArmorMeta) LeatherBoots.getItemMeta();
+            metab.setColor(Color.ORANGE);
+            LeatherBoots.setItemMeta(metab);
+             
+                    	
+        	
+        p.getInventory() .setChestplate(LeatherChestplate);	
+        p.getInventory() .setLeggings(LeatherLeggings);
+        p.getInventory() .setBoots(LeatherBoots);
+        	
+        	
+        	p.addPotionEffect(new PotionEffect(PotionEffectType.CONFUSION,
+					Integer.MAX_VALUE, 1));
+			
+			
 		}
 	}
 }
