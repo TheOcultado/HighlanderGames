@@ -6,6 +6,7 @@ import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.LeatherArmorMeta;
 import org.bukkit.potion.Potion;
 import org.bukkit.potion.PotionEffect;
@@ -125,6 +126,11 @@ public class Kits {
 			
 			ItemStack IronSword = new ItemStack(Material.IRON_SWORD);
 			IronSword.addEnchantment(Enchantment.DAMAGE_ALL, 1);
+			ItemMeta meta = (ItemMeta) IronSword.getItemMeta();
+			meta.setDisplayName("Slicey");
+			IronSword.setItemMeta(meta);
+			p.getInventory().setItemInHand(IronSword);
+			
 		} else if(kit.equalsIgnoreCase("Chemist")){
 			
 			ItemStack Potion1 = new ItemStack(Material.POTION, 15);
