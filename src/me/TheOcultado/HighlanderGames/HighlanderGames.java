@@ -2,7 +2,10 @@ package me.TheOcultado.HighlanderGames;
 
 import java.util.logging.Logger;
 
+import me.TheOcultado.HighlanderGames.listeners.OnPlayerJoin;
+
 import org.bukkit.plugin.PluginDescriptionFile;
+import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class HighlanderGames extends JavaPlugin {
@@ -11,6 +14,8 @@ public class HighlanderGames extends JavaPlugin {
 	public static HighlanderGames plugin;
 	
 	FileManager files = FileManager.getInstance();
+	
+	public final OnPlayerJoin oPJ = new OnPlayerJoin();
 
 	@Override
 	public void onEnable() {
@@ -18,6 +23,10 @@ public class HighlanderGames extends JavaPlugin {
 		this.log.info(pdfFile.getName() + " has been Enabled!");
 		
 		files.setup(this);
+		
+		PluginManager pm = getServer().getPluginManager();
+
+		pm.registerEvents(this.oPJ, this);
 	}
 	
 	@Override
